@@ -115,7 +115,7 @@ static bool subscribeToSelf = NO; // Change to NO to subscribe to streams other 
     [_publisher setName:[[UIDevice currentDevice] name]];
     [_session publish:_publisher];
     [self.view addSubview:_publisher.view];
-    [_publisher.view setFrame:CGRectMake(0, 0, 3*widgetWidth/2, widgetHeight*2)];
+    [_publisher.view setFrame:CGRectMake(widgetWidth - 120, widgetHeight*2 - 200, 120, 120)];
     UIButton *endButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [endButton addTarget:self
                   action:@selector(endClicked:)
@@ -186,6 +186,10 @@ static bool subscribeToSelf = NO; // Change to NO to subscribe to streams other 
     [endButton addTarget:self
                   action:@selector(endClicked:)
         forControlEvents:UIControlEventTouchUpInside];
+    if (_publisher)
+    {
+        [self.view bringSubviewToFront:_publisher.view];
+    }
     endButton.titleLabel.font = [UIFont systemFontOfSize:16.0];
     [endButton setTitle:@"End" forState:UIControlStateNormal];
     endButton.frame = CGRectMake(widgetWidth/4, widgetHeight * 2 - 50, widgetWidth/2, 40.0);
