@@ -115,7 +115,11 @@ static bool subscribeToSelf = NO; // Change to NO to subscribe to streams other 
     [_publisher setName:[[UIDevice currentDevice] name]];
     [_session publish:_publisher];
     [self.view addSubview:_publisher.view];
-    [_publisher.view setFrame:CGRectMake(widgetWidth - 120, widgetHeight*2 - 200, 120, 120)];
+    [_publisher.view setFrame:CGRectMake(widgetWidth - 170, widgetHeight*2 - 200, 160, 120)];
+    _publisher.view.layer.cornerRadius = 10.0;
+    _publisher.view.layer.masksToBounds = YES;
+    _publisher.view.layer.borderWidth = 5.0;
+    _publisher.view.layer.borderColor = [UIColor redColor].CGColor;
     UIButton *endButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [endButton addTarget:self
                   action:@selector(endClicked:)
