@@ -19,6 +19,15 @@
 
 @end
 
+
+
+
+@implementation ProfileViewController
+
+static Person* me;
+static ProfileViewController* _self;
+static UIImage* myPicture;
+
 void saveCallback (id arg) {
     NSLog(@"Save profile JSON: %@", arg);
     printf("%s", "Saved a profile");
@@ -31,19 +40,6 @@ void pictureCallback(id arg) {
     printf("%s", "Saved a picture");
 }
 
-
-@implementation ProfileViewController
-@synthesize nameLabel = _nameLabel;
-@synthesize emailLabel = _emailLabel;
-@synthesize bioLabel = _bioLabel;
-@synthesize imageView = _imageView;
-
-static Person* me;
-static ProfileViewController* _self;
-
-
-
-
 #pragma mark - Managing the detail item
 
 
@@ -55,9 +51,6 @@ static ProfileViewController* _self;
     }
     if ([[segue identifier] isEqualToString:@"showSkillEdit"]) {
         [[segue destinationViewController] setDetailItem:me];
-//        NSArray *navigationControllers = [[segue destinationViewController] viewControllers];
-//        SkillViewController *skillViewController = [navigationControllers objectAtIndex:0];
-//        [skillViewController setDetailItem:me];
     }
     
 }
@@ -91,14 +84,15 @@ static ProfileViewController* _self;
     static NSString *skillIdentifier = @"SkillCell";
     if (indexPath.row == 0) {
         PIctureNameButtonTableViewCell* cell = (PIctureNameButtonTableViewCell *)[self.tableView dequeueReusableCellWithIdentifier:picIdentifier];
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
-            NSData *imageData = [NSData dataWithContentsOfURL:[me profPic]];
-            
-            dispatch_async(dispatch_get_main_queue(), ^{
-                // Update the UI
-                cell.picture.image = [UIImage imageWithData:imageData];
-            });
-        });
+//        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+//            NSData *imageData = [NSData dataWithContentsOfURL:[me profPic]];
+//            
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                // Update the UI
+//                cell.picture.image = [UIImage imageWithData:imageData];
+//            });
+//        });
+        cell.picture.image = myPicture;
         
         NSString *name = [NSString stringWithFormat:@"%@ %@", [me firstName], [me lastName]];
         if ([name isEqualToString: @" "]) cell.name.text = [me username];
@@ -125,7 +119,6 @@ static ProfileViewController* _self;
 }
 
 
-
 - (IBAction)save:(UIStoryboardSegue *)segue {
     if ([[segue identifier] isEqualToString:@"saveInput"]) {
         EditViewController *editController = [segue sourceViewController];
@@ -134,15 +127,22 @@ static ProfileViewController* _self;
         [me setEmail:editController.emailField.text];
         [me setBio:editController.bioField.text];
         
+        
         [QApiRequests editProfile: [me firstName] andLastName: [me lastName] andBio:[me bio] andEmail:[me email] andProfile:[NSString stringWithFormat:@"%@ %@", [me firstName], [me lastName]] andCallback: saveCallback];
         
         if (editController.hasNewImage == YES) {
             [QApiRequests uploadImage:editController.selectedImage.image andId:[NSString stringWithFormat: @"%i",[me userID]] andCallback:pictureCallback];
+            myPicture = editController.selectedImage.image;
         }
-        [self.tableView reloadData];
+        [(UITableView*)_self.tableView reloadData];
+
+
     }
     
 }
+
+
+
 
 - (IBAction)cancel:(UIStoryboardSegue *)segue {
     
@@ -179,7 +179,16 @@ void profileCallback (id arg){
         }
         me.skills = allmyskills;
     }
-    [(UITableView*)_self.tableView reloadData];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+        NSData *imageData = [NSData dataWithContentsOfURL:[me profPic]];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            // Update the UI
+            myPicture = [UIImage imageWithData:imageData];
+            [(UITableView*)_self.tableView reloadData];
+        });
+    });
+
     //[_self configureView];
     //[_self loadButtons];
 }
@@ -199,15 +208,20 @@ void profileCallback (id arg){
     
     _self = self;
     self.tableView.allowsSelection = NO;
-    
-}
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSInteger myID = [defaults integerForKey:@"myID"];
     [QApiRequests getProfiles: myID andCallback: &profileCallback];
+
+    
 }
+
+//- (void)viewWillAppear:(BOOL)animated {
+//    [super viewWillAppear:animated];
+//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+//    NSInteger myID = [defaults integerForKey:@"myID"];
+//    [QApiRequests getProfiles: myID andCallback: &profileCallback];
+//}
 
 
 
