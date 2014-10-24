@@ -19,7 +19,7 @@ class QuriousLoginView(View):
 
         if user is not None:
             login(request, user)
-	    data = simplejson.dumps({'userid': user.id})
+	        data = simplejson.dumps({'userid': user.id})
             return HttpResponse(data, mimetype='application/json')
         else:
             return HttpResponse('', mimetype='application/json')
@@ -40,7 +40,6 @@ class QuriousSignUpView(View):
     """
     def post(self, request, *args, **kwargs):
         form = ProfileSignUpForm(request.POST)
-        import pdb; pdb.set_trace()
         if form.is_valid():
             try:
                 user = User.objects.get(username=form.cleaned_data.get('username'))

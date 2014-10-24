@@ -269,8 +269,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "163"
             endingLineNumber = "163"
-            landmarkName = "detail_callback()"
-            landmarkType = "7">
+            landmarkName = "-didReceiveMemoryWarning"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -349,8 +349,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "159"
             endingLineNumber = "159"
-            landmarkName = "detail_callback()"
-            landmarkType = "7">
+            landmarkName = "@implementation DetailViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -365,8 +365,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "160"
             endingLineNumber = "160"
-            landmarkName = "detail_callback()"
-            landmarkType = "7">
+            landmarkName = "-didReceiveMemoryWarning"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -380,9 +380,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "170"
-            endingLineNumber = "170"
-            landmarkName = "-sessionButtonClicked"
-            landmarkType = "5">
+            endingLineNumber = "170">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -555,8 +553,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "78"
             endingLineNumber = "78"
-            landmarkName = "getNotificationsCallback()"
-            landmarkType = "7">
+            landmarkName = "-viewDidLoad"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -571,8 +569,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "79"
             endingLineNumber = "79"
-            landmarkName = "getNotificationsCallback()"
-            landmarkType = "7">
+            landmarkName = "-viewDidLoad"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -635,8 +633,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "107"
             endingLineNumber = "107"
-            landmarkName = "getNotificationsCallback()"
-            landmarkType = "7">
+            landmarkName = "@implementation NotificationViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -683,8 +681,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "134"
             endingLineNumber = "134"
-            landmarkName = "getNotificationsCallback()"
-            landmarkType = "7">
+            landmarkName = "@implementation NotificationViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -699,8 +697,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "124"
             endingLineNumber = "124"
-            landmarkName = "getNotificationsCallback()"
-            landmarkType = "7">
+            landmarkName = "-tableView:cellForRowAtIndexPath:"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -779,7 +777,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "145"
             endingLineNumber = "145"
-            landmarkName = "-viewDidLoad"
+            landmarkName = "-sessionButtonClicked"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -795,7 +793,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "113"
             endingLineNumber = "113"
-            landmarkName = "-tableView:cellForRowAtIndexPath:"
+            landmarkName = "-tableView:canEditRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -811,8 +809,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "149"
             endingLineNumber = "149"
-            landmarkName = "-viewDidLoad"
-            landmarkType = "5">
+            landmarkName = "@implementation DetailViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -827,7 +825,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "146"
             endingLineNumber = "146"
-            landmarkName = "-viewDidLoad"
+            landmarkName = "-sessionButtonClicked"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -859,7 +857,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "125"
             endingLineNumber = "125"
-            landmarkName = "-tableView:cellForRowAtIndexPath:"
+            landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -875,8 +873,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "131"
             endingLineNumber = "131"
-            landmarkName = "-tableView:cellForRowAtIndexPath:"
-            landmarkType = "5">
+            landmarkName = "@implementation DetailViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -891,8 +889,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "71"
             endingLineNumber = "71"
-            landmarkName = "@implementation DetailViewController"
-            landmarkType = "3">
+            landmarkName = "-tableView:cellForRowAtIndexPath:"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -907,8 +905,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "46"
             endingLineNumber = "46"
-            landmarkName = "@implementation DetailViewController"
-            landmarkType = "3">
+            landmarkName = "-numberOfSectionsInTableView:"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -955,8 +953,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "114"
             endingLineNumber = "114"
-            landmarkName = "-tableView:cellForRowAtIndexPath:"
-            landmarkType = "5">
+            landmarkName = "@implementation ProfileViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1003,8 +1001,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "152"
             endingLineNumber = "152"
-            landmarkName = "@implementation ProfileViewController"
-            landmarkType = "3">
+            landmarkName = "profileCallback()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1051,7 +1049,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "81"
             endingLineNumber = "81"
-            landmarkName = "-tableView:heightForRowAtIndexPath:"
+            landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1067,7 +1065,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "104"
             endingLineNumber = "104"
-            landmarkName = "-textField:shouldChangeCharactersInRange:replacementString:"
+            landmarkName = "-textView:shouldChangeTextInRange:replacementText:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1083,7 +1081,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "103"
             endingLineNumber = "103"
-            landmarkName = "-textField:shouldChangeCharactersInRange:replacementString:"
+            landmarkName = "-textView:shouldChangeTextInRange:replacementText:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
